@@ -1,0 +1,48 @@
+{
+  "name": "optimacros-backend",
+  "version": "1.0.0",
+  "description": "Backend ",
+  "main": "/build/index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc -p tsconfig.json --allowJs --outDir ./build",
+    "dev:serve": "env-cmd -f ./.dev.env ts-node --pretty src/index.ts",
+    "dev": "nodemon -e ts,js -w ./src -x npm run dev:serve",
+    "start": "npm run build && env-cmd -f ./.dev.env node build/index.js",
+    "test": "env-cmd -f .tests.env jest --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hino-2/optimacros-backend.git"
+  },
+  "keywords": [
+    "optimacros",
+    "backend"
+  ],
+  "author": "i.am@igor-ushakov.ru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hino-2/optimacros-backend/issues"
+  },
+  "homepage": "https://github.com/hino-2/optimacros-backend#readme",
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.6",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.3.0",
+    "express": "^4.19.2",
+    "joi": "^17.13.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.6.2",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.3"
+  }
+}
